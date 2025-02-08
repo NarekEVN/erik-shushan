@@ -1,0 +1,273 @@
+@font-face {
+    font-family: 'MontserratARM';
+    font-style: normal;
+    src: url('../fonts/Montserratarm-Regula.woff') format('woff');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'MontserratARM';
+    font-style: normal;
+    src: url('../fonts/Montserratarm-Thin.woff') format('woff');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'MontserratARM';
+    font-style: normal;
+    src: url('../fonts/Montserratarm-Light.woff') format('woff');
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: 'MontserratARM';
+    font-style: normal;
+    src: url('../fonts/Montserratarm-Bold.woff') format('woff');
+    font-weight: 700;
+}
+
+:root {
+    --gold: #a9957d;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "MontserratARM", serif;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.container {
+    width: 70%;
+    margin: 0 auto;
+}
+
+main {
+    z-index: 1;
+    background-image: url('../images/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    background-attachment: fixed;
+    padding: 35px 0;
+}
+
+.gold-circle {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    width: 500px;
+    transform: translate(-50%, -50%) rotate(-48deg);
+    animation: gold-circle 2.5s infinite ease-in-out;
+}
+
+.main-text {
+    position: relative;
+    margin-top: 170px;
+    text-align: center;
+    color: var(--gold);
+    font-size: 45px;
+    font-weight: 300;
+    font-style: italic;
+    z-index: 999;
+}
+
+.main-text .husband-name {
+    margin-left: -50px;
+}
+
+.main-text .and-sign {
+    margin-left: 50px;
+}
+
+.main-text .wife-name {
+    margin-left: 150px;
+}
+
+.main-title {
+        text-align: center;
+    color: white;
+    font-size: 45px;
+    font-weight: 300;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.countdown {
+    margin-top: 250px;
+    text-align: center;
+    color: white;
+    font-size: 45px;
+    font-weight: 300;
+    letter-spacing: 5px;
+}
+
+.countdown h3 {
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+
+.countdown-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.countdown-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 0 40px;
+    font-weight: 200;
+}
+
+.countdown-splitter {
+    content: "";
+    width: 2px;
+    height: 200px;
+    background-color: var(--gold);
+}
+
+.invite-text {
+    margin-top: 150px;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.date {
+    text-align: center;
+    font-size: 100px;
+    margin-top: 80px;
+    color: var(--gold);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.date span {
+    display: block;
+    margin: 0 10px;
+}
+
+.date-splitter {
+    width: 3px;
+    height: 120px;
+    background-color: var(--gold);
+}
+
+.action-item {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.action-item img {
+    width: 300px;
+}
+
+.action-item p {
+    color: var(--gold);
+    font-size: 20px;
+    font-weight: 100;
+    margin-bottom: 10px;
+}
+
+.action-item .bold {
+    font-weight: 700;
+}
+
+.outlined-btn {
+    display: inline-block;
+    color: white;
+    border: 2px solid var(--gold);
+    padding: 16px;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 20px;
+    margin-top: 20px;
+    transition: .3s ease;
+}
+
+.outlined-btn:hover {
+    border-radius: 40px;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.action-item.end {
+    margin-top: 100px;
+}
+
+.action-item.end img {
+    width: 100px;
+}
+
+.play-music {
+    margin: 0 auto;
+    background: transparent;
+    cursor: pointer;
+    text-align: center;
+    border: none;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.play-music img {
+    width: 100%;
+}
+
+@keyframes gold-circle {
+    0% {
+        transform: translate(-50%, -50%) rotate(-48deg);
+    }
+    50% {
+        transform: translate(calc(-50% - 2px), calc(-50% - 2px)) rotate(-45deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(-48deg);
+    }
+}
+
+@media (max-width: 800px) {
+    .countdown-items {
+        flex-direction: column;
+    }
+
+    .countdown-splitter {
+        transform: rotate(90deg);
+    }
+}
+
+@media (max-width: 650px) {
+    .date {
+        font-size: 70px;
+    }
+}
+
+@media (max-width: 490px) {
+    .date {
+        font-size: 60px;
+    }
+
+    .gold-circle {
+        width: 400px;
+    }
+
+    .main-text {
+        font-size: 35px;
+    }
+}
