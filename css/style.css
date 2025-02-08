@@ -61,7 +61,7 @@ main {
     top: 70%;
     left: 50%;
     width: 500px;
-    transform: translate(-50%, -50%) rotate(-48deg);
+    transform: translate(-50%, -50%) rotate(-2deg);
     animation: gold-circle 2.5s infinite ease-in-out;
 }
 
@@ -232,23 +232,31 @@ main {
 
 @keyframes gold-circle {
     0% {
-        transform: translate(-50%, -50%) rotate(-48deg);
+        transform: translate(-50%, -50%) rotate(-2deg);
     }
     50% {
-        transform: translate(calc(-50% - 2px), calc(-50% - 2px)) rotate(-45deg);
+        transform: translate(calc(-50% - 2px), calc(-50% - 2px)) rotate(0deg);
     }
     100% {
-        transform: translate(-50%, -50%) rotate(-48deg);
+        transform: translate(-50%, -50%) rotate(-2deg);
     }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 861px) {
     .countdown-items {
         flex-direction: column;
     }
 
+    .countdown-item {
+        padding: 0;
+    }
+
     .countdown-splitter {
         transform: rotate(90deg);
+    }
+
+    .date {
+        font-size: 80px;
     }
 }
 
@@ -258,7 +266,7 @@ main {
     }
 }
 
-@media (max-width: 490px) {
+@media (max-width: 590px) {
     .date {
         font-size: 60px;
     }
@@ -269,5 +277,77 @@ main {
 
     .main-text {
         font-size: 35px;
+    }
+
+    .main-title {
+        font-size: 35px;
+    }
+
+    .countdown h3 {
+        font-size: 35px;
+    }
+
+    .main-text .husband-name {
+        margin-left: -30px;
+    }
+
+    .main-text .and-sign {
+        margin-left: 30px;
+    }
+
+    .main-text .wife-name {
+        margin-left: 120px;
+    }
+}
+
+@media (max-width: 455px) {
+    .gold-circle {
+        width: 350px;
+    }
+
+    .main-title {
+        font-size: 20px;
+    }
+
+    .main-text .husband-name {
+        margin-left: -20px;
+    }
+
+    .main-text .and-sign {
+        margin-left: 20px;
+    }
+
+    .main-text .wife-name {
+        margin-left: 100px;
+    }
+}
+
+@media (max-width: 420px) {
+    .gold-circle {
+        width: 280px;
+    }
+
+    .main-text {
+        font-size: 25px;
+    }
+
+    .main-text .husband-name {
+        margin-left: -10px;
+    }
+
+    .main-text .and-sign {
+        margin-left: 10px;
+    }
+
+    .main-text .wife-name {
+        margin-left: 90px;
+    }
+
+    .countdown h3 {
+        font-size: 28px;
+    }
+
+    .action-item img {
+        width: 200px;
     }
 }
