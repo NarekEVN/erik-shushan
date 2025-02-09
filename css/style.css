@@ -1,22 +1,29 @@
 @font-face {
     font-family: 'MontserratARM';
     font-style: normal;
-    src: url('../fonts/Montserratarm-Regula.woff') format('woff');
-    font-weight: 400;
+    src: url('../fonts/Montserratarm-Light.woff') format('woff');
+    font-weight: 100;
 }
 
 @font-face {
     font-family: 'MontserratARM';
     font-style: normal;
     src: url('../fonts/Montserratarm-Thin.woff') format('woff');
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: 'MontserratARM';
+    font-style: normal;
+    src: url('../fonts/Montserratarm-ExtraL.woff') format('woff');
     font-weight: 300;
 }
 
 @font-face {
     font-family: 'MontserratARM';
     font-style: normal;
-    src: url('../fonts/Montserratarm-Light.woff') format('woff');
-    font-weight: 200;
+    src: url('../fonts/Montserratarm-Regula.woff') format('woff');
+    font-weight: 400;
 }
 
 @font-face {
@@ -28,6 +35,8 @@
 
 :root {
     --gold: #a9957d;
+    --silver: #bdc3c7;
+    --white: #ffffff;
 }
 
 * {
@@ -41,7 +50,7 @@ body {
 }
 
 .container {
-    width: 70%;
+    width: 80%;
     margin: 0 auto;
 }
 
@@ -69,7 +78,7 @@ main {
     position: relative;
     margin-top: 170px;
     text-align: center;
-    color: var(--gold);
+    color: var(--white);
     font-size: 45px;
     font-weight: 300;
     font-style: italic;
@@ -81,11 +90,11 @@ main {
 }
 
 .main-text .and-sign {
-    margin-left: 50px;
+    margin-left: -20px;
 }
 
 .main-text .wife-name {
-    margin-left: 150px;
+    margin-left: 100px;
 }
 
 .main-title {
@@ -100,8 +109,8 @@ main {
 .countdown {
     margin-top: 250px;
     text-align: center;
-    color: white;
-    font-size: 45px;
+    color: var(--white);
+    font-size: 40px;
     font-weight: 300;
     letter-spacing: 5px;
 }
@@ -116,7 +125,7 @@ main {
     justify-content: center;
     align-items: center;
     text-align: center;
-    flex-wrap: wrap;
+    /*flex-wrap: wrap;*/
 }
 
 .countdown-item {
@@ -132,8 +141,10 @@ main {
 .countdown-splitter {
     content: "";
     width: 2px;
+    max-width: 2px;
+    min-width: 2px;
     height: 200px;
-    background-color: var(--gold);
+    background-color: var(--silver);
 }
 
 .invite-text {
@@ -148,7 +159,7 @@ main {
     text-align: center;
     font-size: 100px;
     margin-top: 80px;
-    color: var(--gold);
+    color: var(--white);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -163,20 +174,49 @@ main {
 .date-splitter {
     width: 3px;
     height: 120px;
-    background-color: var(--gold);
+    background-color: var(--silver);
 }
 
 .action-item {
     text-align: center;
-    margin-bottom: 25px;
+    margin: 25px 0;
+}
+
+.action-item i {
+    color: var(--silver);
+    font-size: 150px;
+}
+
+.action-item .img {
+    position: relative;
+}
+
+.action-item .small-hearts-1, .action-item .small-hearts-2 {
+    width: 100px;
+}
+
+.action-item .small-hearts-1 {
+    position: absolute;
+    left: 20%;
+    top: 40%;
+    transform: translate(0, 10px) rotate(-10deg) ;
+    animation: bounce-hearts 2s infinite ease-in-out;
+}
+
+.action-item .small-hearts-2 {
+    position: absolute;
+    right: 20%;
+    top: 40%;
+    transform: translate(0, 10px) rotate(10deg);
+    animation: bounce-hearts 2s infinite linear;
 }
 
 .action-item img {
-    width: 300px;
+    width: 250px;
 }
 
 .action-item p {
-    color: var(--gold);
+    color: var(--white);
     font-size: 20px;
     font-weight: 100;
     margin-bottom: 10px;
@@ -189,7 +229,7 @@ main {
 .outlined-btn {
     display: inline-block;
     color: white;
-    border: 2px solid var(--gold);
+    border: 2px solid var(--silver);
     padding: 16px;
     font-size: 16px;
     text-decoration: none;
@@ -242,17 +282,29 @@ main {
     }
 }
 
-@media (max-width: 861px) {
-    .countdown-items {
-        flex-direction: column;
+@media (max-width: 1110px) {
+    .countdown-item {
+        font-size: 35px;
     }
 
-    .countdown-item {
-        padding: 0;
+    .countdown-metric {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 908px) {
+    .countdown-metric {
+        font-size: 18px;
     }
 
     .countdown-splitter {
-        transform: rotate(90deg);
+        height: 100px;
+    }
+}
+
+@media (max-width: 861px) {
+    .countdown-item {
+        padding: 20px;
     }
 
     .date {
@@ -266,7 +318,17 @@ main {
     }
 }
 
-@media (max-width: 590px) {
+@media (max-width: 618px) {
+    .countdown-metric {
+        font-size: 15px;
+    }
+
+    .countdown-splitter {
+        height: 100px;
+    }
+}
+
+@media (max-width: 591px) {
     .date {
         font-size: 60px;
     }
@@ -292,11 +354,29 @@ main {
     }
 
     .main-text .and-sign {
-        margin-left: 30px;
+        margin-left: -20px;
     }
 
     .main-text .wife-name {
-        margin-left: 120px;
+        margin-left: 90px;
+    }
+
+    .countdown-item {
+        padding: 10px;
+    }
+
+    .countdown-splitter {
+        height: 80px;
+    }
+}
+
+@media (max-width: 510px) {
+    .date {
+        font-size: 40px;
+    }
+
+    .date-splitter {
+        height: 80px;
     }
 }
 
@@ -336,7 +416,7 @@ main {
     }
 
     .main-text .and-sign {
-        margin-left: 10px;
+        margin-left: -10px;
     }
 
     .main-text .wife-name {
@@ -349,5 +429,50 @@ main {
 
     .action-item img {
         width: 200px;
+    }
+}
+
+@media (max-width: 390px) {
+    .countdown-item {
+        font-size: 20px;
+        padding: 0 8px;
+    }
+
+    .countdown-splitter {
+        height: 50px;
+    }
+
+    .countdown-metric {
+        font-size: 12px;
+    }
+
+    .date {
+        font-size: 35px;
+    }
+
+    .date-splitter {
+        height: 45px;
+    }
+}
+
+@media (max-width: 350px) {
+    .date {
+        font-size: 30px;
+    }
+
+    .date-splitter {
+        height: 45px;
+    }
+}
+
+@keyframes bounce-hearts {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(0, 10px);
+    }
+    100% {
+        transform: translate(0, 0);
     }
 }
