@@ -63,6 +63,7 @@ main {
     position: relative;
     background-attachment: fixed;
     padding: 35px 0;
+    height: 100%;
 }
 
 .gold-circle {
